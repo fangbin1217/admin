@@ -13,13 +13,13 @@ $commonParams = [
 ];
 
 if (YII_ENV == 'dev') {
-    $commonParams['serverHost'] = 'http://admin.wechatserver.com/';
-    $commonParams['imgHost'] = 'https://img.myshared.top/';
-    $commonParams['imageFirstPath'] = '/usr/local/var/www/wechatserver/web';
-} else {
-    $commonParams['serverHost'] = 'https://api.fyy6.com/';
+    $commonParams['serverHost'] = 'http://admin.fyy6.fb/';
     $commonParams['imgHost'] = 'https://img.fyy6.com/';
-    $commonParams['imageFirstPath'] = '/home/www/wechatserver/web';
+    $commonParams['imageFirstPath'] = '/usr/local/var/www/admin/web';
+} else {
+    $commonParams['serverHost'] = 'https://admin.fyy6.com/';
+    $commonParams['imgHost'] = 'https://img.fyy6.com/';
+    $commonParams['imageFirstPath'] = '/home/www/admin/web';
 
 }
 

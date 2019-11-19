@@ -16,7 +16,7 @@ if (YII_ENV == 'dev') {
 } else {
     return [
         'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=127.0.0.1;dbname=wechat',
+        'dsn' => 'mysql:host=127.0.0.1;dbname=api',
         'username' => 'root',
         'password' => '11Cda4b4ddca',
         'charset' => 'utf8mb4',
