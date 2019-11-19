@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 
+use app\models\DayRecords;
+
 
 class UserController extends Controller
 {
@@ -27,6 +29,18 @@ class UserController extends Controller
             $this->jsonResponse['data'] = $cacheList;
         }
         return json_encode($this->jsonResponse, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function actionLastweekrecords()
+    {
+        $params = json_decode(file_get_contents('php://input'),true);
+        $access_token = $params['access_token'] ?? '';
+        $cache = Yii::$app->redis->get('T2#' . $access_token);
+        $this->jsonResponse['msg'] = 'no data';
+        if ($access_token && $cache) {
+            $cacheList = json_decode($cache, true);
+            $records = DayRecords::getLastWeekRecords($cacheList['id']);
+        }
     }
 
 }

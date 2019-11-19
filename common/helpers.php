@@ -38,3 +38,17 @@ if (! function_exists('getRandStr')) {
     }
 
 }
+
+if (! function_exists('sayHello')) {
+
+    function sayHello() {
+        $day = date('n');
+        if ($day >6 && $day <= 12) {
+            return '上午好';
+        } else if ($day >12 && $day <= 18) {
+            return '下午好';
+        } else {
+            return '晚上好';
+        }
+    }
+}
