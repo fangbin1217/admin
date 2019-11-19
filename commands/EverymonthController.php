@@ -20,17 +20,19 @@ use app\models\DayIncomes;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class EverydayController extends Controller
+class EverymonthController extends Controller
 {
+
     /**
-     * 设置会员每日收益
+     * 每月1号执行一次 （统计上月未结算数据）
      * @param string $date
      * @return int
      */
     public function actionIndex($date = '')
     {
-        $DayIncomes = DayIncomes::setMemberDayIncomes($date);
-        echo $DayIncomes."success\n";
+
+        $MonthIncomes = DayIncomes::setMemberMonthIncomes($date);
+        echo $MonthIncomes."success\n";
         return ExitCode::OK;
     }
 

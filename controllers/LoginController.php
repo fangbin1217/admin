@@ -47,7 +47,9 @@ class LoginController extends Controller
 
     public function actionTest()
     {
+        //$records = \app\models\MonthIncomes::getIncomes(2);
         $records = \app\models\DayIncomes::getIncomes(2);
+
         print_r($records);
     }
 }
